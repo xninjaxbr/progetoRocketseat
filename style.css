@@ -11,12 +11,12 @@ body {
 }
 
 .container {
+  padding: 0 24px;
   display: flex;
   width: auto;
   max-width: 588px;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #ccc;
   margin: 56px auto;
 }
 
@@ -80,4 +80,11 @@ body {
 
 .social-media ion-icon {
   font-size: 24px;
+}
+
+footer {
+  padding: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
