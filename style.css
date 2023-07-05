@@ -19,10 +19,10 @@
 .light {
   --text-color: #000;
   --bg-url: url("./assets/bg-mobile-light.jpg");
-  --stroke-color: ;
-  --surface-color: ;
-  --surface-color-hover: ;
-  --highline-color: ;
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.1);
+  --highline-color: rgba(0, 0, 0, 0.8);
   --switch-bg: url("./assets/sun.svg");
 }
 
@@ -73,6 +73,7 @@ body {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .switch span {
@@ -89,6 +90,7 @@ body {
 .light .switch button {
   right: 0;
   left: initial;
+  cursor: pointer;
 }
 
 .links {
