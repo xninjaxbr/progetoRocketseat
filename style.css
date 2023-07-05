@@ -3,11 +3,31 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Share Tech", sans-serif;
-  color: #ccc;
+  color: var(--text-color);
+}
+
+:root {
+  --text-color: #ccc;
+  --bg-url: url("./assets/bg-mobile.jpg");
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0);
+  --highline-color: rgba(255, 255, 255, 0.8);
+  --switch-bg: url("./assets/moon-stars.svg");
+}
+
+.light {
+  --text-color: #000;
+  --bg-url: url("./assets/bg-mobile-light.jpg");
+  --stroke-color: ;
+  --surface-color: ;
+  --surface-color-hover: ;
+  --highline-color: ;
+  --switch-bg: url("./assets/sun.svg");
 }
 
 body {
-  background: url("./assets/bg-mobile.jpg") no-repeat top center/cover;
+  background: var(--bg-url) no-repeat top center/cover;
 }
 
 .container {
@@ -36,7 +56,43 @@ body {
   font-weight: bold;
 }
 
+.switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+.switch button {
+  width: 32px;
+  height: 32px;
+  border: none;
+
+  border-radius: 50%;
+  background: white var(--switch-bg) no-repeat center;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+.light .switch button {
+  right: 0;
+  left: initial;
+}
+
 .links {
+  color: currentColor;
   width: 100%;
   display: flex;
   padding: 24px;
@@ -58,16 +114,16 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  border: 1px solid var(--stroke-color-dark-mode, rgba(255, 255, 255, 0.5));
-  background: var(--surface-color-dark-mode, rgba(255, 255, 255, 0.1));
+  border: 1px solid var(--stroke-color);
+  background: var(--surface-color);
   backdrop-filter: blur(4px);
   transition: background 0.5s;
 }
 
 .links li a:hover {
   padding: 16px 24px;
-  border: 2px solid var(--stroke-color-dark-mode, rgba(255, 255, 255, 0.8));
-  background: var(--surface-color-dark-mode, rgba(255, 255, 255, 0));
+  border: 2px solid var(--highline-color);
+  background: var(--surface-color-hover);
 }
 
 .social-media {
